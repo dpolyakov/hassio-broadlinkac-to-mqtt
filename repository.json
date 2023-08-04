@@ -1,0 +1,5 @@
+{
+  "name": "Home Assistant Add-on: BroadlinkAC2MQTT",
+  "url": "https://github.com/dpolyakov/hassio-broadlinkac-to-mqtt",
+  "maintainer": "Dmitry Polyakov <github@dimapolyakov.ru>"
+}
