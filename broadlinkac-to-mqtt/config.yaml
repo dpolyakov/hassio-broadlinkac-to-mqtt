@@ -1,0 +1,60 @@
+---
+name: Broadlink AC to Mqtt
+version: 1.0.0
+slug: broadlink_ac_mqtt
+description: Manage you Broadlink AC in Homeassistant. Use mqtt for transport.
+url: https://github.com/dpolyakov/hassio-broadlinkac-to-mqtt/tree/master/broadlinkac-to-mqtt
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+  - i386
+hassio_api: true
+host_network: true
+advansed: true
+init: false
+map:
+  - ssl
+  - config:rw
+options:
+  devices:
+    - ip: 192.168.1.162
+      mac: EC0BAE184615
+      port: 80
+      name: RoyalClima
+  service:
+    daemon_mode: true
+    update_interval: 10
+  mqtt:
+    host: localhost
+    port: 1883
+    client_id: ac_to_mqtt
+    topic_prefix: /aircon
+    auto_discovery_topic: homeassistant
+    auto_discovery_topic_retain: false
+    discovery: false
+schema:
+  devices:
+    - ip: str
+      mac: str
+      port: port
+      name: str
+  service:
+    daemon_mode: bool
+    update_interval: int
+    self_discovery: bool?
+    bind_to_ip: bool?
+  mqtt:
+    host: str
+    port: port
+    user: str?
+    password: str?
+    client_id: str?
+    topic_prefix: str?
+    auto_discovery_topic: str?
+    auto_discovery_topic_retain: bool?
+    discovery: bool?
+  debug: bool?
+startup: services
+image: "ghcr.io/dpolyakov/{arch}-broadlinkac-to-mqtt"
