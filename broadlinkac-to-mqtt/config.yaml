@@ -1,6 +1,6 @@
 ---
 name: Broadlink AC to Mqtt
-version: 1.1.0
+version: 1.1.1
 slug: broadlink_ac_mqtt
 description: Manage you Broadlink AC in Homeassistant. Use mqtt for transport.
 url: https://github.com/dpolyakov/hassio-broadlinkac-to-mqtt/
@@ -17,10 +17,10 @@ map:
   - config:rw
 options:
   devices:
-  - ip: 10.2.0.230
-    mac: b4222dce73f1
-    name: Living Room
-    port: 80
+    - ip: 10.2.0.230
+      mac: b4222dce73f1
+      name: Living Room
+      port: 80
   service:
     daemon_mode: true
     update_interval: 10

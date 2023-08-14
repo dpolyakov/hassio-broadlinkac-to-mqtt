@@ -2,6 +2,7 @@
 
 profile broadlink_ac_mqtt flags=(attach_disconnected,mediate_deleted) {
   #include <abstractions/base>
+  #include <abstractions/python>
 
   # Capabilities
   file,
@@ -19,6 +20,7 @@ profile broadlink_ac_mqtt flags=(attach_disconnected,mediate_deleted) {
   /etc/cont-finish.d/** rwix,
   /run/{,**} rwk,
   /dev/tty rw,
+  /usr/local/bin/python* ix,
 
   # Bashio
   /usr/lib/bashio/** ix,
