@@ -18,6 +18,7 @@ RUN \
 	&& git clone --depth=1 \
         https://github.com/liaan/broadlink_ac_mqtt.git /app \
 	&& pip install --upgrade pip \
+	&& echo "install requirements" \
 	&& pip install setuptools_rust \
 	&& pip install --no-cache-dir --no-build-isolation -r /app/requirements.txt \
 	\
